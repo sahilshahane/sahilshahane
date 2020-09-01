@@ -2,9 +2,9 @@
 ### Currently Busy
 ### <p align="center">You can find me on 👀</p>
 <p align="center">
-<a href="https://www.linkedin.com/in/sahil-shahane-102746173" target="_blank"><img width=60 src="https://github.com/sahilbest999/sahilbest999/blob/master/icons/linkedin.png"></a>      
-<a href="https://www.t.me/sahilbest999" target="_blank"><img width=60 src="https://github.com/sahilbest999/sahilbest999/blob/master/icons/telegram.png"></a>      
-<a href="https://www.instagram.com/sahilbest999" target="_blank"><img width=60 src="https://github.com/sahilbest999/sahilbest999/blob/master/icons/instagram.png"></a>      
+<a href="https://www.linkedin.com/in/sahil-shahane-102746173" target="_blank"><img width=60 src="https://github.com/sahilbest999/sahilbest999/blob/master/icons/linkedin.svg"></a>      
+<a href="https://www.t.me/sahilbest999" target="_blank"><img width=60 src="https://github.com/sahilbest999/sahilbest999/blob/master/icons/telegram.svg"></a>      
+<a href="https://www.instagram.com/sahilbest999" target="_blank"><img width=60 src="https://github.com/sahilbest999/sahilbest999/blob/master/icons/instagram.svg"></a>      
 <!--<a href="mailto:sahilpshahane123@gmail.com" target="_blank"><img width=50 src="icons/gmail.svg"></a>-->
 </p>
 
