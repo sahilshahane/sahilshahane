@@ -2,7 +2,7 @@
 
 <p align="center">You can find me on</p>
 <p align="center">
-<a><img width="50px" padding="5px" src="icons/telegram.svg"></a><a><img width="50px" src="icons/instagram.svg"></a><a><img width="50px" src="icons/gmail.svg"></a>
+<a><img width="50px" src="icons/telegram.svg"></a>  <a><img width="50px" src="icons/instagram.svg"></a>  <a><img width="50px" src="icons/gmail.svg"></a>
 </p>
 
 <p align="center"><img src="https://github-readme-stats.vercel.app/api?username=sahilbest999&show_icons=true&theme=radical"/></p>
