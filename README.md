@@ -2,7 +2,7 @@
 
 <p align="center">You can find me on</p>
 <p align="center">
-<a href="https://www.t.me/sahilbest999" target="_blank"><img width="50px" src="icons/telegram.svg"></a>    <a href="https://www.instagram.com/sahilbest999"><img width="50px" src="icons/instagram.svg"></a>    <a href="mailto:sahilpshahane123@gmail.com"><img width="50px" src="icons/gmail.svg"></a>
+<a href="https://www.t.me/sahilbest999" target="_blank"><img width="50px" src="icons/telegram.svg"></a>    <a href="https://www.instagram.com/sahilbest999" target="_blank"><img width="50px" src="icons/instagram.svg"></a>    <a href="mailto:sahilpshahane123@gmail.com" target="_blank"><img width="50px" src="icons/gmail.svg"></a>
 </p>
 
 <p align="center"><img src="https://github-readme-stats.vercel.app/api?username=sahilbest999&show_icons=true&theme=radical"/></p>
