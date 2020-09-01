@@ -1,5 +1,8 @@
-### Hi there 👋
+### Hi there 👋, I'm Sahil Shahane
 
+<p align="center"><img src="https://github-readme-stats.vercel.app/api?username=sahilbest999&show_icons=true&theme=radical"/></p>
+
+<--
 **sahilbest999/sahilbest999** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
@@ -12,4 +15,4 @@ Here are some ideas to get you started:
 - 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
-
+-->
