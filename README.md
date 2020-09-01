@@ -2,7 +2,9 @@
 
 <p align="center">You can find me on</p>
 <p align="center">
-  
+  <a align="center"><img src="icons/telegram.svg"></a>
+  <a><img src=""></a>
+  <a><img src=""></a>
 </p>
 
 <p align="center"><img src="https://github-readme-stats.vercel.app/api?username=sahilbest999&show_icons=true&theme=radical"/></p>
