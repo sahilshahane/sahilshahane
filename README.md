@@ -1,6 +1,6 @@
 ## Hi there 👋, I'm Sahil Shahane
 
-### <p align="center">You can find me on 📫</p>
+### <p align="center">You can find me on 👀</p>
 <p align="center">
   <a href="https://www.linkedin.com/in/sahil-shahane-102746173"><img width="50px" src="icons/linkedin.svg"></a>      
 <a href="https://www.t.me/sahilbest999" target="_blank"><img width="50px" src="icons/telegram.svg"></a>      
