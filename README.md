@@ -8,7 +8,7 @@
 <!--<a href="mailto:sahilpshahane123@gmail.com" target="_blank"><img width=50 src="icons/gmail.svg"></a>-->
 </p>
 
-<p align="center"><img src="https://github-readme-stats.vercel.app/api?username=sahilbest999&show_icons=true&theme=radical"/></p>
+<p align="center"><img src="https://github-readme-stats.vercel.app/api?username=sahilbest999&show_icons=true"/></p>
 
 <!--
 **sahilbest999/sahilbest999** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
