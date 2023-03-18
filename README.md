@@ -7,7 +7,7 @@
 <!--<a href="mailto:sahilpshahane123@gmail.com" target="_blank"><img width=50 src="icons/gmail.svg"></a>-->
 </p>
 
-<p align="center"><img src="https://github-readme-stats.vercel.app/api?username=sahilbest999&show_icons=true"/></p>
+<p align="center"><img src="https://github-readme-stats.vercel.app/api?username=sahilshahane&show_icons=true"/></p>
 <div align="center">
 
 <a herf="">![](https://komarev.com/ghpvc/?username=sahilbest999&style=for-the-badge) </a>
