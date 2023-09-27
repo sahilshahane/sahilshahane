@@ -1,4 +1,6 @@
 ## Hi there 👋, I'm Sahil Shahane
+<a href="https://drive.google.com/file/d/1sKMw3bHdF0yt8C6r2aRPM7vS26wqnb0c/view?usp=drive_link" target="_blank">Click me to view resume</a>
+
 ### <p align="center">You can find me on 👀</p>
 <p align="center">
 <a href="https://www.linkedin.com/in/sahil-shahane-102746173" target="_blank"><img width=60 src="https://github.com/sahilbest999/sahilbest999/blob/master/icons/linkedin.png"></a>      
