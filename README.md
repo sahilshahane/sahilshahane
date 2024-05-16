@@ -1,6 +1,4 @@
 <h1 align="center">Hi 👋, I'm Sahil Shahane</h1>
-<h3 align="center">A passionate developer with a curious mind to break production</h3>
-
 <p align="center"> <img src="https://komarev.com/ghpvc/?username=sahilshahane&label=Profile%20views&color=0e75b6&style=flat" alt="sahilshahane" /> </p>
 
 <h3 align="left">Connect with me:</h3>
