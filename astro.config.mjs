@@ -9,5 +9,8 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'always',
   build: { format: 'directory' },
+  // Lets <Image format="webp"> rasterize our own SVGs (the IITB seal is a 55 KB
+  // SVG shown at 36px). Only local, trusted SVGs go through this.
+  image: { dangerouslyProcessSVG: true },
   integrations: [relativeLinks()],
 });

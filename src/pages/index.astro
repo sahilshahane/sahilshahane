@@ -33,6 +33,9 @@ const person = {
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(person)} />
   <link slot="head" rel="preload" href={interFont} as="font" type="font/woff2" crossorigin>
   <link slot="head" rel="preload" href={monoFont} as="font" type="font/woff2" crossorigin>
+  <!-- tech icons are below the fold: load their stylesheet without blocking first paint -->
+  <link slot="head" rel="stylesheet" href="/tech-icons.css" media="print" onload="this.media='all'">
+  <noscript slot="head"><link rel="stylesheet" href="/tech-icons.css"></noscript>
 
   <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
   <canvas class="bgfx" id="bgfx" aria-hidden="true"></canvas>
