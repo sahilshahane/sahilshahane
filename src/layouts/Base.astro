@@ -59,7 +59,11 @@ const favicon = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' view
 <link rel="icon" href={favicon}>
 <link rel="sitemap" href="/sitemap.xml">
 <slot name="head" />
-<script is:inline>document.documentElement.className="js"</script>
+<script is:inline>
+  document.documentElement.className="js";
+  // Apply the saved theme before first paint (the toggle lives in Nav.astro).
+  try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}
+</script>
 </head>
 <body>
 <slot />

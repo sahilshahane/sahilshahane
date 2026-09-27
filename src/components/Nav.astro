@@ -23,3 +23,16 @@ const home = Astro.url.pathname === '/' ? '' : '/';
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
   </button>
 </nav>
+
+<script>
+  const root = document.documentElement;
+  document.getElementById('theme')?.addEventListener('click', () => {
+    const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+    root.dataset.theme = next;
+    try {
+      localStorage.setItem('theme', next);
+    } catch {
+      // storage blocked (private mode etc.) — theme still switches for this page
+    }
+  });
+</script>

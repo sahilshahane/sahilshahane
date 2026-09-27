@@ -57,26 +57,44 @@ function trimSlash(path) {
   return path.length > 1 ? path.replace(/\/+$/, '') : path;
 }
 
-/** Previous-deploy entries that are safe to delete and absent from the new build. */
-function staleFiles(previousManifest) {
-  const current = new Set(files);
-  return previousManifest
+/** Safe relative paths from a previous .deployed-files (absolute and "../" entries dropped). */
+function readList(text) {
+  return text
     .split('\n')
-    .map((line) => line.trim())
-    .filter(Boolean)
-    .filter((file) => {
-      const path = posix.normalize(file);
-      return !isAbsolute(path) && !path.startsWith('..') && !current.has(path);
-    });
+    .map((line) => posix.normalize(line.trim()))
+    .filter((path) => path && path !== '.' && !isAbsolute(path) && !path.startsWith('..'));
 }
 
-/** Parent folders of the given files, deepest first (candidates for removal once empty). */
+/** Parent folders of the given files. */
 function parentDirs(paths) {
   const dirs = new Set();
   for (const path of paths) {
     for (let dir = posix.dirname(path); dir !== '.'; dir = posix.dirname(dir)) dirs.add(dir);
   }
-  return [...dirs].sort((a, b) => b.split('/').length - a.split('/').length);
+  return dirs;
+}
+
+function depth(path) {
+  return path.split('/').length;
+}
+
+/**
+ * What changes between the previous deploy and this one:
+ *  - stale:   files to remove (deployed last time, gone from this build)
+ *  - newDirs: folders to create (this build needs them, last deploy didn't have them), shallowest first
+ *  - oldDirs: folders to remove if empty (last deploy had them, this build doesn't use them), deepest first
+ */
+function plan(previousText) {
+  const previous = readList(previousText);
+  const current = new Set(files);
+  const stale = previous.filter((file) => !current.has(file));
+  const before = parentDirs(previous);
+  const after = parentDirs(files);
+  return {
+    stale,
+    newDirs: [...after].filter((d) => !before.has(d)).sort((a, b) => depth(a) - depth(b)),
+    oldDirs: [...parentDirs(stale)].filter((d) => !after.has(d)).sort((a, b) => depth(b) - depth(a)),
+  };
 }
 
 function deployLocal(dir) {
@@ -85,7 +103,7 @@ function deployLocal(dir) {
     process.exit(1);
   }
   const manifestPath = join(dir, manifestName);
-  const stale = staleFiles(existsSync(manifestPath) ? readFileSync(manifestPath, 'utf8') : '');
+  const { stale, oldDirs } = plan(existsSync(manifestPath) ? readFileSync(manifestPath, 'utf8') : '');
 
   if (dryRun) {
     console.log(`Would copy ${files.length} file(s) to ${dir} and remove ${stale.length}:`);
@@ -95,7 +113,7 @@ function deployLocal(dir) {
 
   cpSync(dist, dir, { recursive: true, force: true });
   for (const file of stale) rmSync(join(dir, normalize(file)), { force: true });
-  for (const sub of parentDirs(stale)) {
+  for (const sub of oldDirs) {
     try {
       rmdirSync(join(dir, sub));
     } catch {
@@ -135,22 +153,24 @@ function deployRemote({ host, port, dir }) {
     // 1. Fetch the previous list (it's fine if there isn't one yet).
     const previousPath = join(work, 'previous');
     sftp([`-get ${q(remote(manifestName))} ${q(previousPath)}`]);
-    const stale = staleFiles(existsSync(previousPath) ? readFileSync(previousPath, 'utf8') : '');
+    const { stale, newDirs, oldDirs } = plan(existsSync(previousPath) ? readFileSync(previousPath, 'utf8') : '');
 
     // 2. Upload the new build, then 3. remove stale files, then 4. write the new list.
     const newManifest = join(work, 'manifest');
     writeFileSync(newManifest, manifest);
-    const dirs = [...new Set(files.flatMap((f) => parentDirs([f])))].sort(
-      (a, b) => a.split('/').length - b.split('/').length,
-    );
     const status = sftp([
-      ...dirs.map((d) => `-mkdir ${q(remote(d))}`),
+      ...newDirs.map((d) => `-mkdir ${q(remote(d))}`),
       ...files.map((f) => `put ${q(join(dist, f))} ${q(remote(f))}`),
       ...stale.map((f) => `-rm ${q(remote(f))}`),
-      ...parentDirs(stale).map((d) => `-rmdir ${q(remote(d))}`),
+      ...oldDirs.map((d) => `-rmdir ${q(remote(d))}`),
       `put ${q(newManifest)} ${q(remote(manifestName))}`,
     ]);
-    if (status !== 0) throw new Error('upload failed — see sftp output above');
+    if (status !== 0) {
+      throw new Error(
+        'upload failed — see sftp output above. If a folder was deleted on the server by hand, ' +
+          `delete ${remote(manifestName)} too and deploy again.`,
+      );
+    }
 
     console.log(`Deployed ${files.length} file(s) to ${host}:${dir}, removed ${stale.length} stale file(s)`);
   } catch (error) {

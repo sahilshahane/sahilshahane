@@ -54,17 +54,6 @@
     el.textContent=out.join(" ");
   });
 
-  /* ── year ── */
-  document.getElementById("yr").textContent=new Date().getFullYear();
-
-  /* ── theme ── */
-  try{var t=localStorage.getItem("theme");if(t)root.dataset.theme=t;}catch(e){}
-  document.getElementById("theme").addEventListener("click",function(){
-    var next=root.dataset.theme==="light"?"dark":"light";
-    root.dataset.theme=next;
-    try{localStorage.setItem("theme",next)}catch(e){}
-  });
-
   /* ── scroll progress (fallback where animation-timeline is unsupported) ── */
   var prog=document.getElementById("prog"),nav=document.getElementById("nav"),ticking=false;
   var hasTimeline=CSS.supports("animation-timeline","scroll()");
