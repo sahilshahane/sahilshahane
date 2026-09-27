@@ -1,0 +1,74 @@
+/* ───────────────────────── drafting chrome ─────────────────────────
+   The page is a drawing open on a drafting table: a vertical ruler
+   that scrolls with the sheet, a CAD crosshair, a brighter patch of grid
+   under the pointer, an inspector outline on hover and an editor-style
+   status bar. All of it is decorative and pointer-events:none; it only
+   switches on for a fine pointer on a wide screen (html.drafting, set by
+   drafting.js), so touch devices and small screens get the plain sheet. */
+
+/* the grid lamp: the same grid, brighter, visible only near the pointer */
+.lamp{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .4s;
+  background:
+    linear-gradient(color-mix(in oklab,var(--accent) 30%,transparent) 1px,transparent 1px) var(--ox,0px) calc(0px - var(--sy,0px))/20px 20px,
+    linear-gradient(90deg,color-mix(in oklab,var(--accent) 30%,transparent) 1px,transparent 1px) var(--ox,0px) calc(0px - var(--sy,0px))/20px 20px;
+  -webkit-mask:radial-gradient(circle 170px at var(--cx,-999px) var(--cy,-999px),#000,transparent);
+          mask:radial-gradient(circle 170px at var(--cx,-999px) var(--cy,-999px),#000,transparent)}
+.drafting.pointer-in .lamp{opacity:1}
+
+/* crosshair */
+.xh{position:fixed;z-index:45;pointer-events:none;opacity:0;transition:opacity .25s;
+  background:color-mix(in oklab,var(--accent) 22%,transparent);will-change:transform}
+.xh-h{left:0;right:0;top:0;height:1px}
+.xh-v{top:0;bottom:0;left:0;width:1px}
+.drafting.pointer-in .xh{opacity:1}
+
+/* vertical ruler: document y, labelled every 100px */
+.ruler-y{display:none;position:fixed;left:0;top:0;bottom:var(--bar);width:22px;z-index:40;overflow:hidden;pointer-events:none;
+  background:color-mix(in oklab,var(--bg) 88%,transparent);border-right:1px solid var(--line)}
+.drafting .ruler-y{display:block}
+.ruler-strip{position:absolute;left:0;right:0;top:0;will-change:transform;
+  background:
+    linear-gradient(var(--line-2) 1px,transparent 1px) 100% 0/9px 100px repeat-y,
+    linear-gradient(var(--line-2) 1px,transparent 1px) 100% 0/6px 50px repeat-y,
+    linear-gradient(var(--line) 1px,transparent 1px) 100% 0/4px 10px repeat-y}
+.ruler-strip span{position:absolute;left:3px;font:500 8.5px/1 var(--mono);color:var(--muted);
+  writing-mode:vertical-rl;transform:rotate(180deg) translateX(1px);letter-spacing:.04em}
+.ruler-mark{position:absolute;left:0;right:0;top:0;height:1px;background:var(--red);opacity:0;will-change:transform}
+.ruler-mark-x{position:fixed;top:0;left:0;width:1px;height:9px;background:var(--red);z-index:51;opacity:0;pointer-events:none;will-change:transform}
+.drafting.pointer-in .ruler-mark,.drafting.pointer-in .ruler-mark-x{opacity:1}
+
+/* inspector: the outline and size tag devtools draws over a hovered element */
+.inspect{position:fixed;left:0;top:0;z-index:44;pointer-events:none;opacity:0;
+  outline:1px solid var(--accent);transition:opacity .15s}
+.inspect.on{opacity:1}
+.inspect::before{content:"";position:absolute;inset:-3px;
+  background:
+    linear-gradient(var(--accent),var(--accent)) 0 0/5px 5px no-repeat,
+    linear-gradient(var(--accent),var(--accent)) 100% 0/5px 5px no-repeat,
+    linear-gradient(var(--accent),var(--accent)) 0 100%/5px 5px no-repeat,
+    linear-gradient(var(--accent),var(--accent)) 100% 100%/5px 5px no-repeat}
+.inspect-tag{position:absolute;left:-1px;bottom:100%;margin-bottom:5px;padding:3px 7px;white-space:nowrap;
+  font:500 10.5px/1.2 var(--mono);color:var(--bg);background:var(--accent)}
+.inspect-tag b{font-weight:500;opacity:.7;margin-left:8px}
+
+/* status bar: vim-style mode block, sheet, cursor position, scroll %, git revision */
+.sbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:55;height:var(--bar);
+  align-items:stretch;font:500 11px/1 var(--mono);color:var(--muted);white-space:nowrap;
+  background:color-mix(in oklab,var(--bg) 92%,#000 8%);border-top:1px solid var(--line-2)}
+.drafting .sbar{display:flex}
+.sbar>span{display:flex;align-items:center;gap:6px;padding:0 12px;border-right:1px solid var(--line)}
+.sbar .mode{padding:0 12px;font-weight:700;letter-spacing:.08em;color:var(--bg);background:var(--accent)}
+.sbar .sheet b{color:var(--fg);font-weight:500}
+.sbar .grow{flex:1;border-right:0}
+.sbar .pos b{display:inline-block;min-width:5ch;color:var(--fg);font-weight:500;text-align:right}
+.sbar .rev b{color:var(--fg);font-weight:500}
+.sbar .rev i{width:7px;height:7px;border-radius:50%;background:var(--accent-3)}
+.sbar kbd{font:inherit;padding:2px 5px;border:1px solid var(--line-2);border-radius:2px;color:var(--fg)}
+.sbar>span:last-child{border-right:0}
+.sbar>[hidden]{display:none}
+@media(max-width:1180px){.sbar .opt{display:none}}
+
+/* make room for the chrome */
+:root.drafting{--bar:26px}
+.drafting body{padding-bottom:var(--bar)}
+.drafting .nav{padding-left:46px}

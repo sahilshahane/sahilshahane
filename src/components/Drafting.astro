@@ -1,0 +1,23 @@
+---
+import { REV } from '../lib/build';
+import '../styles/drafting.css';
+---
+<div class="lamp" aria-hidden="true"></div>
+<div class="ruler-y" aria-hidden="true"><div class="ruler-strip" id="rulerY"></div><i class="ruler-mark" id="rulerMarkY"></i></div>
+<i class="ruler-mark-x" id="rulerMarkX" aria-hidden="true"></i>
+<i class="xh xh-h" id="xhH" aria-hidden="true"></i>
+<i class="xh xh-v" id="xhV" aria-hidden="true"></i>
+<div class="inspect" id="inspect" aria-hidden="true"><span class="inspect-tag"></span></div>
+<div class="sbar" id="sbar" aria-hidden="true">
+  <span class="mode" id="sbMode">BLUEPRINT</span>
+  <span class="sheet">SHEET <b id="sbSheet">01/01</b></span>
+  <span class="grow"></span>
+  <span class="pos opt">X <b id="sbX">+0000</b> Y <b id="sbY">00000</b></span>
+  <span class="opt">SCALE 1:1</span>
+  <span class="pct"><b id="sbPct">Top</b></span>
+  <span class="rev opt"><i></i>REV <b>{REV}</b></span>
+  <span class="hint" id="sbHint" hidden><kbd>`</kbd> terminal</span>
+</div>
+<script>
+  import '../scripts/drafting.js';
+</script>

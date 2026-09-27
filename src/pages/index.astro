@@ -7,6 +7,7 @@ import Work from '../components/home/Work.astro';
 import Projects from '../components/home/Projects.astro';
 import Skills from '../components/home/Skills.astro';
 import Contact from '../components/home/Contact.astro';
+import Drafting from '../components/Drafting.astro';
 import '../styles/main.css';
 
 const person = {
@@ -30,9 +31,8 @@ const person = {
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(person)} />
 
-  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
-  <canvas class="bgfx" id="bgfx" aria-hidden="true"></canvas>
   <div class="grain" aria-hidden="true"></div>
+  <Drafting />
   <div class="progress" id="prog" aria-hidden="true"></div>
 
   <Nav id="nav" />

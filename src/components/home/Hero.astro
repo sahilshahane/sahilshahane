@@ -1,21 +1,23 @@
+---
+import StackDiagram from './StackDiagram.astro';
+import { REV } from '../../lib/build';
+---
 <div class="hero-pin" id="heroPin">
-<header class="hero wrap">
+<header class="hero wrap" data-sheet="General arrangement" data-n="0">
   <div>
-    <h1 class="r" style="--d:0"><span class="name">Sahil Shahane</span><br><span class="grad">takes systems apart, puts them back faster.</span></h1>
-
+    <p class="dwg r" style="--d:0"><span>DWG-001</span><i></i><span>rev <b>{REV}</b></span><i></i><span>software engineer</span></p>
+    <h1 class="r" style="--d:0"><span class="name">Sahil Shahane</span><br><span class="tl">takes systems apart, puts them back <em class="fast">faster.</em></span></h1>
     <p class="typeline r" style="--d:1">
       <span class="tl-label">$</span>
       <span class="tl-out" id="type"
             data-words="billing systems that reconcile;auth that doesn't leak;Kubernetes controllers in Go;a key-value store in Rust;build pipelines 80% faster">billing systems that reconcile</span><span class="caret" aria-hidden="true"></span>
     </p>
-
     <p class="tag r" style="--d:2">
       Currently at <b>IIT Bombay</b>. I care how things actually behave under
       load, not how they're documented to. Most of my work sits a layer below the product —
       billing pipelines, auth, Kubernetes controllers, build tooling — where the problems are
       the ones people tend to call hard. Previously at <b>Outpost Innovations</b> and <b>Sagitec</b>.
     </p>
-
     <div class="meta r" style="--d:3">
       <a class="chip" href="mailto:sahilpshahane123@gmail.com">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 7 9 6 9-6"/></svg>
@@ -39,29 +41,8 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         See the work</a>
     </div>
-
-    <div class="scrollhint r" style="--d:5"><i></i> Scroll</div>
+    <div class="scrollhint r" style="--d:5"><i></i> Scroll to take it apart</div>
   </div>
-
-
-  <div class="joke" id="joke" aria-hidden="true">
-    <div class="tty">
-      <div class="tty-bar"><i></i><i></i><i></i><span id="ttyTitle">~/sahil — zsh</span></div>
-      <pre class="tty-body" id="ttyBody"><span class="p">$</span> git log --oneline
-<span class="hl">a1f3c2e</span> fix
-<span class="hl">b7e9d10</span> fix again
-<span class="hl">c3d4e5f</span> actually fix
-<span class="hl">d9f8e7a</span> pls work
-<span class="hl">e0a1b2c</span> final
-<span class="hl">f1c2d3e</span> final_FINAL_v2
-<span class="dm"># commit messages are a cry for help.</span>
-<span class="p">$</span> <span class="cur"></span></pre>
-      <div class="tty-foot">
-        <span class="cup"><span>coffee</span><span class="cups" id="cups"><i></i><i></i><i></i><i></i><i class="e"></i></span></span>
-        <span>bugs fixed <b id="bFix">41</b></span>
-        <span class="bad">bugs created <b id="bNew">42</b></span>
-      </div>
-    </div>
-  </div>
+  <StackDiagram />
 </header>
 </div>

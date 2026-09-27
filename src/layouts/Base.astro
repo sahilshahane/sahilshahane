@@ -1,4 +1,8 @@
 ---
+// Shared by every page, so Astro emits them as one cached stylesheet.
+import '../styles/fonts.css';
+import '../styles/base.css';
+
 interface Props {
   title: string;
   description: string;
@@ -25,7 +29,7 @@ const {
 // Full URLs are required here (canonical, Open Graph); everything else is relative.
 const canonical = new URL(path, Astro.site).href;
 const ogImageUrl = new URL(ogImage, Astro.site).href;
-const favicon = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230b0b0e'/><text y='68' x='50' text-anchor='middle' font-family='system-ui,sans-serif' font-size='54' font-weight='700' fill='%237aa2ff'>S</text></svg>`;
+const favicon = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230c2a55'/><path d='M0 33H100M0 67H100M33 0V100M67 0V100' stroke='%238fd0ff' stroke-opacity='.18' stroke-width='2'/><text y='68' x='50' text-anchor='middle' font-family='ui-monospace,monospace' font-size='56' font-weight='700' fill='%23eef5ff'>S</text></svg>`;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +41,7 @@ const favicon = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' view
 {keywords && <meta name="keywords" content={keywords}>}
 <meta name="author" content="Sahil Shahane">
 <meta name="robots" content={robots}>
-<meta name="theme-color" content="#08080a">
+<meta name="theme-color" content="#0c2a55">
 <link rel="canonical" href={canonical}>
 
 <meta property="og:title" content={title}>

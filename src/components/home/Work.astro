@@ -4,15 +4,12 @@ import iitb from '../../assets/company/iitb/logo.svg';
 import sagitec from '../../assets/company/sagitec/logo.png';
 import outpost from '../../assets/company/outpost/logo-dark.svg';
 ---
-<section id="work" class="sec wrap">
-  <div class="sec-head r"><span class="idx">01</span><h2>Experience</h2><span class="rule"></span></div>
+<section id="work" class="sec wrap" data-sheet="Experience" data-n="1">
+  <div class="sec-head r"><span class="idx">01</span><h2>Experience</h2><span class="rule"></span><code class="cmd">git log --author=sahil</code></div>
 
   <div class="xp" id="xp">
     <svg class="xp-line" aria-hidden="true">
-      <defs><linearGradient id="xpGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="var(--accent-3)"/><stop offset=".4" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/>
-      </linearGradient></defs>
-      <path class="bg"/><path class="fg"/><circle class="xp-head" r="4.5"/>
+      <path class="bg"/><path class="fg"/><rect class="xp-head" x="-4.5" y="-4.5" width="9" height="9"/>
     </svg>
 
     <article class="job now r">
@@ -27,7 +24,7 @@ import outpost from '../../assets/company/outpost/logo-dark.svg';
         </div>
       </aside>
       <div class="job-card">
-        <div class="xhead"><h3>Software Engineer</h3><span class="when"><i aria-hidden="true"></i>Aug 2025 — Present</span></div>
+        <div class="xhead"><h3>Software Engineer</h3><span class="head-tag">HEAD → main</span><span class="when"><i aria-hidden="true"></i>Aug 2025 — Present</span></div>
         <div class="stack"><span>Next.js</span><span>React</span><span>Django</span><span>Tailwind CSS</span><span>shadcn/ui</span></div>
       </div>
     </article>

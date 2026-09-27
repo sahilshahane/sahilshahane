@@ -1,12 +1,45 @@
-<section id="contact" class="contact wrap">
-  <h2 class="r">Let's build something<br><span class="grad">that holds up.</span></h2>
-  <p class="r" style="--d:1">I like systems-level problems — the kind where performance, correctness and scale are all on the line. Happy to talk about any of it.</p>
-  <div class="cta r" style="--d:2">
-    <a class="btn btn-p" href="mailto:sahilpshahane123@gmail.com">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 7 9 6 9-6"/></svg>
-      Say hello</a>
-    <a class="btn btn-s" href="https://drive.google.com/file/d/1sKMw3bHdF0yt8C6r2aRPM7vS26wqnb0c/view?usp=drive_link" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-      Résumé (PDF)</a>
+<section id="contact" class="contact wrap" data-sheet="Contact" data-n="4">
+  <div class="contact-copy">
+    <div class="sec-head r" aria-hidden="true"><span class="idx">04</span><span class="rule"></span><code class="cmd">ssh hello@sahil</code></div>
+    <h2 class="big r">Let's build something<br><span class="grad">that holds up.</span></h2>
+    <p class="r" style="--d:1">I like systems-level problems — the kind where performance, correctness and scale are all on the line. Happy to talk about any of it.</p>
+    <div class="cta r" style="--d:2">
+      <a class="btn btn-p" href="mailto:sahilpshahane123@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 7 9 6 9-6"/></svg>
+        Say hello</a>
+      <a class="btn btn-s" href="https://drive.google.com/file/d/1sKMw3bHdF0yt8C6r2aRPM7vS26wqnb0c/view?usp=drive_link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Résumé (PDF)</a>
+    </div>
+    <p class="term-hint r" style="--d:3">Or click the terminal and type <code>help</code>.<br>Press <kbd>`</kbd> anywhere to jump back here.</p>
+  </div>
+
+  <!-- The terminal of truth: replays small developer disasters while idle,
+       and turns into a working shell once you click it (terminal.js). -->
+  <div class="tty r" id="term" style="--d:2">
+    <div class="tty-bar"><i></i><i></i><i></i><span id="ttyTitle">~/sahil — zsh</span></div>
+    <pre class="tty-body" id="ttyBody" aria-hidden="true"><span class="p">$</span> git log --oneline
+<span class="hl">a1f3c2e</span> fix
+<span class="hl">b7e9d10</span> fix again
+<span class="hl">c3d4e5f</span> actually fix
+<span class="hl">d9f8e7a</span> pls work
+<span class="hl">e0a1b2c</span> final
+<span class="hl">f1c2d3e</span> final_FINAL_v2
+<span class="dm"># commit messages are a cry for help.</span>
+</pre>
+    <form class="tty-in" id="ttyForm" autocomplete="off">
+      <label for="ttyInput" class="p">guest@sahil:~$</label>
+      <input id="ttyInput" type="text" enterkeyhint="send" spellcheck="false" autocapitalize="off" autocorrect="off"
+             placeholder="type help" aria-describedby="ttyHelp">
+      <span class="sr-only" id="ttyHelp">A small shell. Type help and press Enter to list commands.</span>
+    </form>
+    <div class="tty-foot" aria-hidden="true">
+      <span class="cup"><span>coffee</span><span class="cups" id="cups"><i></i><i></i><i></i><i></i><i class="e"></i></span></span>
+      <span>bugs fixed <b id="bFix">41</b></span>
+      <span class="bad">bugs created <b id="bNew">42</b></span>
+    </div>
   </div>
 </section>
+<script>
+  import '../../scripts/terminal.js';
+</script>
