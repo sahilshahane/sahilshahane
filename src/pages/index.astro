@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/home/Hero.astro';
+import Work from '../components/home/Work.astro';
+import Projects from '../components/home/Projects.astro';
+import Skills from '../components/home/Skills.astro';
+import Contact from '../components/home/Contact.astro';
+import '../styles/main.css';
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Sahil Shahane',
+  url: Astro.site?.href,
+  jobTitle: 'Software Engineer',
+  affiliation: { '@type': 'CollegeOrUniversity', name: 'IIT Bombay' },
+  sameAs: ['https://github.com/sahilshahane', 'https://linkedin.com/in/sahilshahane'],
+  knowsAbout: ['Rust', 'Kubernetes', 'Systems Programming', 'Backend Development', 'Payments Infrastructure'],
+};
+---
+<Base
+  title="Sahil Shahane — Software Engineer"
+  description="Sahil Shahane — Software Engineer at IIT Bombay. Billing systems, Kubernetes controllers, Rust, and a 2100-icon open source library."
+  keywords="Sahil Shahane, Software Engineer, IIT Bombay, Rust, Kubernetes, Systems Engineering, Backend Developer, Billing Systems, Open Source, sahil, sahil shahane,gpu,iitb,software engineer,backend developer,systems engineer,open source,rust,kubernetes,billing systems,payments infrastructure"
+  ogType="profile"
+  ogImage="assets/images/og-image.png"
+  ogImageAlt="Sahil Shahane — Software Engineer"
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(person)} />
+
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <canvas class="bgfx" id="bgfx" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="progress" id="prog" aria-hidden="true"></div>
+
+  <Nav id="nav" />
+
+  <main id="top">
+    <Hero />
+    <Work />
+    <Projects />
+    <Skills />
+    <Contact />
+    <Footer />
+  </main>
+</Base>
+
+<script>
+  import '../scripts/main.js';
+</script>

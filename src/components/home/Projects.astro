@@ -1,0 +1,86 @@
+<section id="projects" class="sec wrap">
+  <div class="sec-head r"><span class="idx">02</span><h2>Open source &amp; projects</h2><span class="rule"></span></div>
+
+  <div class="bento">
+
+    <article class="card proj feat r rv-pop" style="--d:0">
+      <a href="https://github.com/outpostHQ/jengaicons" target="_blank" rel="noopener" style="position:absolute;inset:0" aria-label="Jenga Icons on GitHub"></a>
+      <div class="viz" aria-hidden="true">
+        <div class="icon-wall" id="iconWall"></div>
+        <div class="icon-count"><span>2,100+</span> icons</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-meta"><span class="ptag"><i></i>Open source</span>
+          <span class="go">GitHub<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+        <h3>Jenga Icons</h3>
+        <p>An icon library for web frameworks, with <b>2,100+ icons</b> and bundling for multiple frameworks.
+           Reworking the import path made consumers' icon bundles <b>10× smaller</b>, and builds got about
+           <b>1.5× faster</b>, finishing in under three minutes.</p>
+        <div class="impact">
+          <div><b data-count="2100" data-suffix="+">2,100+</b><span>icons shipped</span></div>
+          <div><b data-count="10" data-suffix="×">10×</b><span>smaller bundles</span></div>
+          <div><b data-count="1.5" data-suffix="×">1.5×</b><span>faster builds</span></div>
+        </div>
+        <div class="stack"><span>TypeScript</span><span>React</span><span>Bundling</span><span>npm</span></div>
+      </div>
+    </article>
+
+    <article class="card proj wide r rv-pop" style="--d:1">
+      <a href="https://github.com/sahilshahane/valkey-rust" target="_blank" rel="noopener" style="position:absolute;inset:0" aria-label="Redis, in Rust on GitHub"></a>
+      <div class="viz" aria-hidden="true">
+        <div class="term">
+          <div class="term-bar"><i></i><i></i><i></i><span>redis-cli · 127.0.0.1:6379</span></div>
+          <pre id="redisTerm"><span class="p">&gt;</span> SET user:42 "sahil"
+<span class="o">OK</span>
+<span class="p">&gt;</span> INCR page:hits
+<span class="s">(integer) 1337</span>
+<span class="p">&gt;</span> GET user:42
+<span class="s">"sahil"</span></pre>
+        </div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-meta"><span class="ptag">Systems · Rust</span>
+          <span class="go">GitHub<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+        <h3>Redis, in Rust</h3>
+        <p>A fast key–value database written from scratch: the RESP protocol,
+           storage engine and event loop, built to understand what Redis actually does.</p>
+        <div class="stack"><span>Rust</span><span>RESP</span><span>Systems</span></div>
+      </div>
+    </article>
+
+    <article class="card proj r rv-pop" style="--d:2">
+      <a href="https://rock-paper-scissors-sahilbest999.vercel.app/" target="_blank" rel="noopener" style="position:absolute;inset:0" aria-label="Rock Paper Scissors — live demo"></a>
+      <div class="viz" aria-hidden="true">
+        <div class="rps" id="rps">
+          <div class="rps-side"><div class="rps-slot" data-side="you"></div>YOU <span class="rps-score" data-score="you">0</span></div>
+          <div class="rps-vs">vs</div>
+          <div class="rps-side"><div class="rps-slot" data-side="cpu"></div>CPU <span class="rps-score" data-score="cpu">0</span></div>
+          <div class="rps-res">best of forever</div>
+        </div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-meta"><span class="ptag"><i></i>Live demo</span>
+          <span class="go">Play<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+        <h3>Rock Paper Scissors</h3>
+        <p>A small, carefully built version of the classic, fully typed and deployed.</p>
+        <div class="stack"><span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span></div>
+      </div>
+    </article>
+
+    <article class="card proj full r rv-pop" style="--d:3">
+      <a href="https://sahilshahane.github.io/Snake-Game/index.html" target="_blank" rel="noopener" style="position:absolute;inset:0" aria-label="Snake — live demo"></a>
+      <div class="viz" aria-hidden="true">
+        <canvas class="snake-cv" id="snakeCv"></canvas>
+        <div class="snake-hud">score <b id="snakeScore">0</b></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-meta"><span class="ptag"><i></i>Live demo</span>
+          <span class="go">Play<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+        <h3>Snake</h3>
+        <p>Snake drawn on a canvas with p5.js: collisions, growth and the scoring loop, all in plain JavaScript.</p>
+        <div class="stack"><span>p5.js</span><span>JavaScript</span><span>Canvas</span></div>
+      </div>
+    </article>
+
+  </div>
+</section>

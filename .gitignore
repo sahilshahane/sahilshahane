@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+
+# Copied from dist/ by tools/deploy-at-server.mjs
+/index.html
+/blog/
+/_astro/
+/assets/
+/robots.txt
+/sitemap.xml
+/.deployed-files

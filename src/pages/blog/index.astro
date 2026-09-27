@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/blog.css';
+---
+<Base
+  title="Blog — Sahil Shahane"
+  description="Writing from Sahil Shahane on systems, infrastructure and performance. Nothing published yet."
+  path="blog/"
+  robots="noindex, follow"
+  ogImage="assets/images/og-blog.png"
+  ogImageAlt="Sahil Shahane — Blog"
+>
+  <div class="grain" aria-hidden="true"></div>
+
+  <Nav active="blog" />
+
+<main>
+  <div class="wrap">
+    <div class="hd">
+      <span class="idx">Writing</span>
+      <h1>Blog</h1>
+      <p>Notes on systems, infrastructure and performance — as soon as there's something worth writing down.</p>
+    </div>
+    <div class="empty">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <span class="n">0</span>
+      <span class="k">Entries published</span>
+      <p>Nothing here yet — check back soon, or say hello in the meantime.</p>
+      <a class="btn btn-s" href="/#contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 7 9 6 9-6"/></svg>
+        Get in touch</a>
+    </div>
+  </div>
+</main>
+
+  <Footer />
+</Base>
+
+<script>
+  import '../../scripts/blog.js';
+</script>

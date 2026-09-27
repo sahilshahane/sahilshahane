@@ -1,0 +1,124 @@
+---
+import { Image } from 'astro:assets';
+import iitb from '../../assets/company/iitb/logo.svg';
+import sagitec from '../../assets/company/sagitec/logo.png';
+import outpost from '../../assets/company/outpost/logo-dark.svg';
+---
+<section id="work" class="sec wrap">
+  <div class="sec-head r"><span class="idx">01</span><h2>Experience</h2><span class="rule"></span></div>
+
+  <div class="xp" id="xp">
+    <svg class="xp-line" aria-hidden="true">
+      <defs><linearGradient id="xpGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="var(--accent-3)"/><stop offset=".4" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/>
+      </linearGradient></defs>
+      <path class="bg"/><path class="fg"/><circle class="xp-head" r="4.5"/>
+    </svg>
+
+    <article class="job now r">
+      <aside class="xside">
+        <div class="xyear"><b>2025</b><span>→ now</span></div>
+        <div class="xco">
+          <span class="logo logo-img logo-seal" aria-hidden="true"><Image src={iitb} alt="" /></span>
+          <div>
+            <div class="org"><a href="https://www.cse.iitb.ac.in/" target="_blank" rel="noopener">IIT Bombay<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
+            <div class="xmeta"><span class="dur" data-from="2025-08">1 yr 2 mos</span> · Part-time</div>
+          </div>
+        </div>
+      </aside>
+      <div class="job-card">
+        <div class="xhead"><h3>Software Engineer</h3><span class="when"><i aria-hidden="true"></i>Aug 2025 — Present</span></div>
+        <div class="stack"><span>Next.js</span><span>React</span><span>Django</span><span>Tailwind CSS</span><span>shadcn/ui</span></div>
+      </div>
+    </article>
+
+    <article class="job r">
+      <aside class="xside">
+        <div class="xyear"><b>2024</b><span>→ 2025</span></div>
+        <div class="xco">
+          <span class="logo logo-img logo-seal logo-wide" aria-hidden="true"><Image src={sagitec} alt="" width={72} /></span>
+          <div>
+            <div class="org"><a href="https://www.sagitec.com/en-us/" target="_blank" rel="noopener">Sagitec Solutions<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
+            <div class="xmeta"><span class="dur" data-from="2024-06" data-to="2025-04">11 mos</span> · Intern</div>
+          </div>
+        </div>
+      </aside>
+      <div class="job-card">
+        <div class="xhead"><h3>Engineer&nbsp;I</h3><span class="when">Jun 2024 — Apr 2025</span></div>
+        <ul class="bul">
+          <li>Designed and built a <b>flowchart editor</b> for internal tooling, frontend through to API.</li>
+          <li>Backed it with a <b>.NET Core + EF Core</b> API server.</li>
+          <li>Supported senior engineers with technical research for <b>proof-of-concept</b> work.</li>
+          <li>Tracked down and fixed UI and backend bugs in the <b>Xelence</b> framework, improving stability and performance.</li>
+        </ul>
+        <div class="stack"><span>React</span><span>Next.js</span><span>.NET Core</span><span>EF Core</span><span>Tailwind CSS</span></div>
+      </div>
+    </article>
+
+    <article class="job r">
+      <aside class="xside">
+        <div class="xyear"><b>2023</b><span>→ 2024</span></div>
+        <div class="xco">
+          <span class="logo logo-img" aria-hidden="true"><span><Image src={outpost} alt="" /></span></span>
+          <div>
+            <div class="org"><a href="https://outpost.run/" target="_blank" rel="noopener">Outpost Innovations<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
+            <div class="xmeta"><span class="dur" data-from="2023-02" data-to="2024-06">1 yr 5 mos</span> · Intern</div>
+          </div>
+        </div>
+        <div class="impact">
+          <div><b data-count="1.6" data-suffix="%">1.6%</b><span>of total revenue recovered</span></div>
+          <div><b data-count="10" data-suffix="×">10×</b><span>smaller icon imports</span></div>
+          <div><b data-count="6" data-suffix="+">6+</b><span>products on one billing system</span></div>
+        </div>
+      </aside>
+      <div class="job-card">
+        <div class="xhead"><h3>Software Engineer</h3><span class="when">Feb 2023 — Jun 2024</span></div>
+        <ul class="bul">
+          <li><b>Billing.</b> Built the entire billing system covering all 6+ products on Stripe and Node.js.
+            <ul class="sub">
+              <li>Dynamic plan creation for custom enterprise accounts.</li>
+              <li>Real-time hardware price updates — removed the downtime their site previously needed.</li>
+              <li>Recovered <b>1.6% of total revenue</b> with a custom Stripe payment-intent integration.</li>
+              <li>Automated the paywall and suspension flow for unpaid invoices.</li>
+            </ul>
+          </li>
+          <li><b>Security.</b> Proposed and designed <b>role-based access control</b> plus unified authentication (OAuth 2.0, OIDC) across their APIs.
+            <ul class="sub">
+              <li>Wired authentication through to the Next.js frontend, including sign-in and sign-up.</li>
+            </ul>
+          </li>
+          <li><b>Kubernetes.</b> Wrote custom <b>Go controllers</b> to track CPU and GPU usage across the cluster.</li>
+          <li><b>Datasets.</b> Set up Git and Git LFS for model and dataset storage, then cut storage costs by moving to <b>AWS S3</b> as the filesystem.</li>
+          <li><b>Performance.</b> Reduced their icon library import size by <b>10×</b>.</li>
+        </ul>
+        <div class="stack"><span>Node.js</span><span>Stripe</span><span>Next.js</span><span>Go</span><span>Kubernetes</span><span>OAuth 2.0</span><span>AWS S3</span><span>Git LFS</span></div>
+      </div>
+    </article>
+
+    <article class="job r">
+      <aside class="xside">
+        <div class="xyear"><b>2022</b></div>
+        <div class="xco">
+          <span class="logo" style="--h:150" aria-hidden="true">BO</span>
+          <div>
+            <div class="org">Boossti</div>
+            <div class="xmeta"><span class="dur" data-from="2022-07" data-to="2022-12">6 mos</span> · Intern</div>
+          </div>
+        </div>
+        <div class="impact">
+          <div><b data-count="80" data-suffix="%">80%</b><span>faster CI/CD builds</span></div>
+        </div>
+      </aside>
+      <div class="job-card">
+        <div class="xhead"><h3>Frontend Developer</h3><span class="when">Jul 2022 — Dec 2022</span></div>
+        <ul class="bul">
+          <li>Built frontend components and pages, integrated REST APIs, wrote unit tests.</li>
+          <li>Helped standardise the shared <b>UI component library</b>.</li>
+          <li>Cut development cost by migrating the codebase to <b>TypeScript</b>.</li>
+          <li>Reduced <b>CI/CD build time by 80%</b> through caching.</li>
+        </ul>
+        <div class="stack"><span>React</span><span>TypeScript</span><span>REST</span><span>Unit testing</span></div>
+      </div>
+    </article>
+  </div>
+</section>

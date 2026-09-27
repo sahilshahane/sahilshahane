@@ -1,0 +1,25 @@
+---
+interface Props {
+  /** Which nav item to mark active. */
+  active?: 'blog';
+  /** Extra attributes for the <nav> element (the homepage uses id="nav"). */
+  id?: string;
+}
+
+const { active, id } = Astro.props;
+// On the homepage, section links must stay bare "#id" — main.js scroll-spy matches on that.
+const home = Astro.url.pathname === '/' ? '' : '/';
+---
+<nav class="nav" id={id}>
+  <a href={`${home}#top`} class="mark">sahil<span>.</span>shahane</a>
+  <div class="navlinks">
+    <a href={`${home}#work`}>Work</a>
+    <a href={`${home}#projects`}>Projects</a>
+    <a href={`${home}#skills`}>Skills</a>
+    <a href="/blog/" class:list={{ active: active === 'blog' }}>Blog</a>
+    <a href={`${home}#contact`}>Contact</a>
+  </div>
+  <button class="themebtn" id="theme" aria-label="Toggle colour theme" title="Toggle theme">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+  </button>
+</nav>
