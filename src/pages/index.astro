@@ -8,6 +8,8 @@ import Projects from '../components/home/Projects.astro';
 import Skills from '../components/home/Skills.astro';
 import Contact from '../components/home/Contact.astro';
 import '../styles/main.css';
+import interFont from '../assets/fonts/inter.woff2?url';
+import monoFont from '../assets/fonts/jbmono.woff2?url';
 
 const person = {
   '@context': 'https://schema.org',
@@ -29,6 +31,8 @@ const person = {
   ogImageAlt="Sahil Shahane — Software Engineer"
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(person)} />
+  <link slot="head" rel="preload" href={interFont} as="font" type="font/woff2" crossorigin>
+  <link slot="head" rel="preload" href={monoFont} as="font" type="font/woff2" crossorigin>
 
   <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
   <canvas class="bgfx" id="bgfx" aria-hidden="true"></canvas>
