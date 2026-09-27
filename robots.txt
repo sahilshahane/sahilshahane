@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.cse.iitb.ac.in/~sahilshahane/sitemap.xml
