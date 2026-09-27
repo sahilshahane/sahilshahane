@@ -1,0 +1,3 @@
+/* Shared by every page via Base.astro. Subset woff2: weights 400–700, Latin + the few symbols the site uses. */
+@font-face{font-family:Inter;font-style:normal;font-weight:400 700;font-display:block;src:url(../assets/fonts/inter.woff2) format("woff2")}
+@font-face{font-family:JBMono;font-style:normal;font-weight:400 700;font-display:block;src:url(../assets/fonts/jbmono.woff2) format("woff2")}

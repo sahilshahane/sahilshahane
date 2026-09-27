@@ -1,4 +1,7 @@
 ---
+import '../styles/fonts.css';
+import interFont from '../assets/fonts/inter.woff2?url';
+
 interface Props {
   title: string;
   description: string;
@@ -57,6 +60,7 @@ const favicon = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' view
 <meta name="twitter:image" content={ogImageUrl}>
 
 <link rel="icon" href={favicon}>
+<link rel="preload" href={interFont} as="font" type="font/woff2" crossorigin>
 <link rel="sitemap" href="/sitemap.xml">
 <slot name="head" />
 <script is:inline>
