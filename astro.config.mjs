@@ -8,7 +8,9 @@ export default defineConfig({
   site: 'https://www.cse.iitb.ac.in/~sahilshahane/',
   output: 'static',
   trailingSlash: 'always',
-  build: { format: 'directory' },
+  // Inline the CSS into each page: a separate stylesheet blocks first render
+  // (Lighthouse "render-blocking requests") and ours is small.
+  build: { format: 'directory', inlineStylesheets: 'always' },
   // Lets <Image format="webp"> rasterize our own SVGs (the IITB seal is a 55 KB
   // SVG shown at 36px). Only local, trusted SVGs go through this.
   image: { dangerouslyProcessSVG: true },
