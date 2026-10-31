@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import iitb from '../../assets/company/iitb/logo.svg';
 ---
 <section id="skills" class="sec wrap">
@@ -39,7 +39,7 @@ import iitb from '../../assets/company/iitb/logo.svg';
 
   <div class="grid r rv-tilt" style="margin-top:44px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
     <article class="card edu">
-      <h3><Image class="seal" src={iitb} alt="" width={72} format="webp" />Education</h3>
+      <h3><Picture class="seal" src={iitb} alt="" width={72} formats={["avif"]} fallbackFormat="webp" pictureAttributes={{ style: 'display:contents' }} />Education</h3>
       <p><b>Indian Institute of Technology Bombay</b><br>Master's, Computer Science &amp; Engineering</p>
       <div class="stack"><span>Aug 2025 — Present</span></div>
     </article>

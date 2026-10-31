@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, Picture } from 'astro:assets';
 import iitb from '../../assets/company/iitb/logo.svg';
 import sagitec from '../../assets/company/sagitec/logo.png';
 import outpost from '../../assets/company/outpost/logo-dark.svg';
@@ -19,7 +19,7 @@ import outpost from '../../assets/company/outpost/logo-dark.svg';
       <aside class="xside">
         <div class="xyear"><b>2025</b><span>→ now</span></div>
         <div class="xco">
-          <span class="logo logo-img logo-seal" aria-hidden="true"><Image src={iitb} alt="" width={72} format="webp" /></span>
+          <span class="logo logo-img logo-seal" aria-hidden="true"><Picture src={iitb} alt="" width={72} formats={["avif"]} fallbackFormat="webp" pictureAttributes={{ style: 'display:contents' }} /></span>
           <div>
             <div class="org"><a href="https://www.cse.iitb.ac.in/" target="_blank" rel="noopener">IIT Bombay<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
             <div class="xmeta"><span class="dur" data-from="2025-08">1 yr 2 mos</span> · Part-time</div>
@@ -36,7 +36,7 @@ import outpost from '../../assets/company/outpost/logo-dark.svg';
       <aside class="xside">
         <div class="xyear"><b>2024</b><span>→ 2025</span></div>
         <div class="xco">
-          <span class="logo logo-img logo-seal logo-wide" aria-hidden="true"><Image src={sagitec} alt="" width={72} /></span>
+          <span class="logo logo-img logo-seal logo-wide" aria-hidden="true"><Picture src={sagitec} alt="" width={72} formats={["avif"]} fallbackFormat="webp" pictureAttributes={{ style: 'display:contents' }} /></span>
           <div>
             <div class="org"><a href="https://www.sagitec.com/en-us/" target="_blank" rel="noopener">Sagitec Solutions<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
             <div class="xmeta"><span class="dur" data-from="2024-06" data-to="2025-04">11 mos</span> · Intern</div>
